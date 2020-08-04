@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rock Paper Scissors</title>
+	<style type="text/css">
+		h1 {
+			color:red;
+		}
+	</style>
+</head>
+<body>
+	<h1>Rock Paper Scissors</h1>
+	<button onclick="userSelect(0)">Rock</button>
+	<button onclick="userSelect(1)">Paper</button>
+	<button onclick="userSelect(2)">Scissors</button>
+	<button onclick="sayHello()">About Me!</button>
+	<script type="text/javascript">
+/// 3 data types 
+// global vs local variable - what are the data that youneed to store?
+// logic - using control flow
+// if you want to show, use alert, next week or following week, we will see how to show the items on the page
+// 7.55pm (1st checkpoint) - 8.15pm (full answer)
+
+var computerScore = 0;
+var userScore = 0;
+function sayHello(){
+
+	alert("Hello World");
+}
+
+function userSelect(selection){
+			// To generate random number between 0 1 2
+
+			var computerChoice = Math.floor(Math.random()*3)
+			if (selection == 0){
+				if (computerChoice == 0){
+					alert("You choose Rock, Computer Choose rock. It's a draw [ User - "+userScore + ", Computer "+computerScore+" ]")
+				}
+				else if (computerChoice == 1){
+					computerScore++
+					alert("You choose Rock, Computer choose Paper. You lose. [ User - "+userScore + ", Computer "+computerScore+" ]")
+				}
+				else {
+					userScore++
+					alert("You choose Rock, Computer choose Scissors. You Win. [ User - "+userScore + ", Computer "+computerScore+" ]")
+				}
+			}
+			else if(selection == 1){
+				if (computerChoice == 0){
+					userScore++
+					alert("You choose Paper, Computer Choose rock. You win [ User - "+userScore + ", Computer "+computerScore+" ]")
+				}
+				else if (computerChoice == 1){
+					alert("You choose Paper, Computer Choose paper. It's a draw [ User - "+userScore + ", Computer "+computerScore+" ]")
+
+				}
+				else {
+					computerScore++
+					alert("You choose Paper, Computer Choose scissors. You lose [ User - "+userScore + ", Computer "+computerScore+" ]")
+				}
+			}
+			else {
+				if (computerChoice == 0){
+					computerScore++
+					alert("You choose Scissors, Computer Choose Rock. You lose [ User - "+userScore + ", Computer "+computerScore+" ]")
+				}
+				else if (computerChoice == 1){
+					userScore++
+					alert("You choose Scissors, Computer Choose Paper. You win [ User - "+userScore + ", Computer "+computerScore+" ]")
+				}
+				else {
+					
+					alert("You choose Scissors, Computer Choose Scissors. It's a draw [ User - "+userScore + ", Computer "+computerScore+" ]")
+				}
+			}
+
+
+			/// You will have a big if else statement
+			//
+		}
+
+	</script>
+</body>
+</html>
